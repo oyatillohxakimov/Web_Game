@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>XO Duel</title>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="game-container">
+    <header class="game-header">
+      <div>
+        <p class="eyebrow">WEB GAME</p>
+
+        <h1>XO <span>Duel</span></h1>
+
+        <p class="subtitle">
+          Ikki o‘yinchi. To‘qqiz katak. Bitta g‘olib.
+        </p>
+      </div>
+
+      <button id="themeBtn" class="icon-btn">☀️</button>
+    </header>
+
+    <section class="settings">
+      <div class="setting-group">
+        <label for="modeSelect">O‘yin rejimi</label>
+
+        <select id="modeSelect">
+          <option value="computer">Kompyuterga qarshi</option>
+          <option value="friend">Ikki kishilik</option>
+        </select>
+      </div>
+
+      <div id="difficultyBox" class="setting-group">
+        <label for="difficultySelect">Qiyinlik darajasi</label>
+
+        <select id="difficultySelect">
+          <option value="easy">Oson</option>
+          <option value="medium" selected>O‘rta</option>
+          <option value="hard">Qiyin</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="scoreboard">
+      <div class="score-card player-x active" id="xScoreCard">
+        <span class="player-symbol">X</span>
+        <span class="player-name" id="xName">Siz</span>
+        <strong id="xScore">0</strong>
+      </div>
+
+      <div class="round-info">
+        <span>RAUND</span>
+        <strong id="roundNumber">1</strong>
+      </div>
+
+      <div class="score-card player-o" id="oScoreCard">
+        <span class="player-symbol">O</span>
+        <span class="player-name" id="oName">Kompyuter</span>
+        <strong id="oScore">0</strong>
+      </div>
+    </section>
+
+    <section class="status-box">
+      <div class="turn-indicator" id="turnIndicator"></div>
+      <p id="statusText">Navbat: Siz</p>
+    </section>
+
+    <section class="board" id="board">
+      <button class="cell" data-index="0"></button>
+      <button class="cell" data-index="1"></button>
+      <button class="cell" data-index="2"></button>
+      <button class="cell" data-index="3"></button>
+      <button class="cell" data-index="4"></button>
+      <button class="cell" data-index="5"></button>
+      <button class="cell" data-index="6"></button>
+      <button class="cell" data-index="7"></button>
+      <button class="cell" data-index="8"></button>
+    </section>
+
+    <div class="controls">
+      <button id="newRoundBtn" class="primary-btn">
+        Yangi raund
+      </button>
+
+      <button id="resetBtn" class="secondary-btn">
+        Hisobni tozalash
+      </button>
+    </div>
+
+    <p class="hint">
+      X uchun: <b>siz</b>
+      &nbsp;|&nbsp;
+      O uchun: <b id="hintText">kompyuter</b>
+    </p>
+  </main>
+
+  <div class="result-modal hidden" id="resultModal">
+    <div class="modal-content">
+      <div class="result-icon" id="resultIcon">🏆</div>
+
+      <h2 id="resultTitle">G‘alaba!</h2>
+
+      <p id="resultMessage">Ajoyib o‘yin!</p>
+
+      <button id="modalNextBtn" class="primary-btn">
+        Keyingi raund
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
